@@ -421,7 +421,7 @@ Check if the tested segmenter is assigned to the good Script/Language in `SEGMEN
                 assert_eq!(&tokenized_text[..], $tokenized, r#"
 Global tokenize() function didn't tokenize the text as expected.
 
-help: The normalized version of the segmented text is probably wrong, the used normalizers make unexpeted changes to the provided text.
+help: The normalized version of the segmented text is probably wrong, the used normalizers make unexpected changes to the provided text.
 Make sure that normalized text is valid or change the trigger condition of the noisy normalizers by updating `should_normalize`.
 "#);
             }

@@ -233,9 +233,9 @@ impl<'tb, A: AsRef<[u8]>> TokenizerBuilder<'tb, A> {
     /// Configure the words that will be segmented before any other segmentation.
     ///
     /// This words dictionary is used to override the segmentation over these words,
-    /// the tokenizer will find all the occurences of these words before any Language based segmentation.
+    /// the tokenizer will find all the occurrences of these words before any Language based segmentation.
     /// If some of the words are in the stop_words' list or in the separators' list,
-    /// then they will be categorized as `TokenKind::StopWord` or as `TokenKind::Separator` aswell.
+    /// then they will be categorized as `TokenKind::StopWord` or as `TokenKind::Separator` as well.
     ///
     /// # Arguments
     ///
@@ -344,7 +344,7 @@ impl<'tb, A: AsRef<[u8]>> TokenizerBuilder<'tb, A> {
         }
     }
 
-    /// Build the configurated `Tokenizer` consumming self.
+    /// Build the configurated `Tokenizer` consuming self.
     ///
     /// This method allows to drop the tokenizer builder without having to drop the Tokenizer itself.
     pub fn into_tokenizer(mut self) -> Tokenizer<'tb> {

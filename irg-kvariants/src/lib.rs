@@ -5,7 +5,7 @@ use std::collections::HashMap;
 #[derive(Debug, Eq, PartialEq)]
 pub enum KVariantClass {
     Wrong,
-    SementicVariant,
+    SemanticVariant,
     Simplified,
     Old,
     Equal,
@@ -44,14 +44,14 @@ pub static KVARIANTS: Lazy<HashMap<char, KVariant>> = Lazy::new(|| {
 
         if let Some(classification) = match line.relation.as_str() {
             "wrong!" => Some(KVariantClass::Wrong),
-            "sem" => Some(KVariantClass::SementicVariant),
+            "sem" => Some(KVariantClass::SemanticVariant),
             "simp" => Some(KVariantClass::Simplified),
             "old" => Some(KVariantClass::Old),
             "=" => Some(KVariantClass::Equal),
             unexpected_classification => {
                 debug_assert!(
                     false,
-                    "Unexpected classification {unexpected_classification:?} encountered. Consider handling or ignore explicaitly.",
+                    "Unexpected classification {unexpected_classification:?} encountered. Consider handling or ignore explicitly.",
                 );
                 None
             }
@@ -91,7 +91,7 @@ mod test {
             KVARIANTS.get(&'䀾'),
             Some(&KVariant {
                 source_ideograph: '䀾',
-                classification: KVariantClass::SementicVariant,
+                classification: KVariantClass::SemanticVariant,
                 destination_ideograph: '䁈',
             }),
         );

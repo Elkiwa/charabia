@@ -47,7 +47,7 @@ impl Normalizer for Classifier {
     }
 }
 
-/// Structure for providing options to the classfier.
+/// Structure for providing options to the classifier.
 #[derive(Debug, Clone, Default)]
 pub struct ClassifierOption<'no> {
     pub stop_words: Option<Set<&'no [u8]>>,
@@ -126,7 +126,7 @@ mod test {
         ]
     }
 
-    // expected result of the complete Normalizer pieline.
+    // expected result of the complete Normalizer pipeline.
     fn normalized_tokens() -> Vec<Token<'static>> {
         vec![
             Token {

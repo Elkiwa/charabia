@@ -6,7 +6,7 @@ use crate::Token;
 /// <Script/Language> specialized [`Normalizer`].
 ///
 /// This Normalizer uses [`<UsedLibraryToNormalize>`] internally to normalize the provided token.
-/// <OptionalAdditionnalExplanations>
+/// <OptionalAdditionalExplanations>
 pub struct DummyNormalizer;
 
 // All normalizers only need to implement the method `normalize_char` and the method `should_normalize` of the `CharNormalizer` trait.
@@ -20,7 +20,7 @@ impl CharNormalizer for DummyNormalizer {
         } else if c.is_lowercase() {
             // the current character is already lowercased.
 
-            // return Some of the orginal version to keep the original character.
+            // return Some of the original version to keep the original character.
             // note that `into()` will convert any `char` or `String` into the expected type `CharOrStr`.
             Some(c.into())
         } else {
@@ -35,7 +35,7 @@ impl CharNormalizer for DummyNormalizer {
 
     // Returns `true` if the Normalizer should be used.
     fn should_normalize(&self, token: &Token) -> bool {
-        // here we lowercase only on Latin and Cyrillic Scripts and if the current token contains an uppercased character.
+        // here we lowercase only on Latin and Cyrillic Scripts and if the current token contains an uppercase character.
         token.script == Script::Latin
             && token.script == Script::Cyrillic
             && token.lemma.chars().any(char::is_uppercase)
@@ -46,7 +46,7 @@ impl CharNormalizer for DummyNormalizer {
 //     - change the name of the file `dummy_example.rs` to `dummy.rs`
 //     - import module by adding `mod dummy;` (filename) in `normalizer/mod.rs`
 //     - Add Normalizer in `NORMALIZERS` in `normalizer/mod.rs`
-//     - check if it didn't break any test or benhchmark
+//     - check if it didn't break any test or benchmark
 
 // Test the normalizer:
 #[cfg(test)]
@@ -80,7 +80,7 @@ mod test {
         }]
     }
 
-    // expected result of the complete Normalizer pieline.
+    // expected result of the complete Normalizer pipeline.
     fn normalized_tokens() -> Vec<Token<'static>> {
         vec![Token {
             lemma: Owned("pascalcase".to_string()),

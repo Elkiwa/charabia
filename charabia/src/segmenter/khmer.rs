@@ -24,7 +24,7 @@ static FST_SEGMENTER: Lazy<FstSegmenter> = Lazy::new(|| FstSegmenter::new(&WORDS
 /// <Script/Language> specialized [`Segmenter`].
 ///
 /// This Segmenter uses [`<UsedLibraryToSegment>`] internally to segment the provided text.
-/// <OptionalAdditionnalExplanations>
+/// <OptionalAdditionalExplanations>
 //
 //TIP: Name the Segmenter with its purpose and not its internal behavior:
 //     prefer JapaneseSegmenter (based on the Language) instead of LinderaSegmenter (based on the used Library).
@@ -63,6 +63,6 @@ mod test {
 
 // Include the newly implemented Segmenter in the tokenization pipeline:
 //	   - assign Segmenter to a Script and a Language by adding it in `SEGMENTERS` in `segmenter/mod.rs`
-//	   - check if it didn't break any test or benhchmark
+//	   - check if it didn't break any test or benchmark
 
 // Your Segmenter will now be used on texts of the assigned Script and Language. Thank you for your contribution, and congratulation! 🎉

@@ -108,7 +108,7 @@ mod test {
         ]
     }
 
-    // expected result of the complete Normalizer pieline.
+    // expected result of the complete Normalizer pipeline.
     fn normalized_tokens() -> Vec<Token<'static>> {
         vec![
             Token {

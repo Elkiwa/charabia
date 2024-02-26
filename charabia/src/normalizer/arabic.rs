@@ -21,7 +21,7 @@ impl CharNormalizer for ArabicNormalizer {
     }
 
     fn should_normalize(&self, token: &Token) -> bool {
-        token.script == Script::Arabic && token.lemma.chars().any(is_shoud_normalize)
+        token.script == Script::Arabic && token.lemma.chars().any(is_should_normalize)
     }
 }
 
@@ -35,7 +35,7 @@ fn normalize_arabic_char(c: char) -> Option<CharOrStr> {
     }
 }
 
-fn is_shoud_normalize(c: char) -> bool {
+fn is_should_normalize(c: char) -> bool {
     matches!(c, 'ـ' | 'ٱ' | 'ى' | 'ة')
 }
 

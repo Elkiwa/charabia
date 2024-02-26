@@ -56,12 +56,12 @@ let mut tokens = orig.tokenize();
 let token = tokens.next().unwrap();
 // the lemma into the token is normalized: `Thé` became `the`.
 assert_eq!(token.lemma(), "the");
-// token is classfied as a word
+// token is classified as a word
 assert!(token.is_word());
 
 let token = tokens.next().unwrap();
 assert_eq!(token.lemma(), " ");
-// token is classfied as a separator
+// token is classified as a separator
 assert!(token.is_separator());
 ```
 

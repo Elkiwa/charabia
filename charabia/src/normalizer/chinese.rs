@@ -67,7 +67,7 @@ mod test {
             },
             Token {
                 lemma: Owned("澚䀾亚㮺刄杤".to_string()),
-                char_end: 5,
+                char_end: 5, //TODO: 6?
                 byte_end: 15,
                 script: Script::Cj,
                 language: Some(Language::Cmn),

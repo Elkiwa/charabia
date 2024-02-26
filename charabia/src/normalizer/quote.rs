@@ -10,7 +10,7 @@ pub struct QuoteNormalizer;
 impl CharNormalizer for QuoteNormalizer {
     fn normalize_char(&self, c: char) -> Option<CharOrStr> {
         if is_unicode_high_quotation_mark(c) {
-            Some('\''.into())
+            Some('\''.into()) //TODO: double quote?
         } else {
             Some(c.into())
         }
